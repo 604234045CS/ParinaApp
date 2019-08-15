@@ -13,8 +13,14 @@
 <ion-content padding>
 
    <img src="{{contact.imageUrl}}" alt="" width="150" height="150">
-    <button ion-button round block color = "secondary"> <ion-icon name="call"></ion-icon> &nbsp; &nbsp;CALL : {{contact.telephone}}</button>
-    <button ion-button round block color = "medium"><ion-icon name="mail"></ion-icon> &nbsp; &nbsp;SMS : {{contact.telephone}}</button>
+    <button ion-button round block color = "secondary" (click)="Call()"> 
+      <ion-icon name="call">
+    </ion-icon> &nbsp; &nbsp;CALL : {{contact.telephone}}
+  </button>
+    <button ion-button round block color = "medium" (click)="SMS()">
+      <ion-icon name="mail">
+      </ion-icon> &nbsp; &nbsp;SMS : {{contact.telephone}}
+    </button>
    
 
 </ion-content>
