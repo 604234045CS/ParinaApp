@@ -1,12 +1,7 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the BatteryStatusPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { BatteryStatus } from '@ionic-native/battery-status';
 
 @IonicPage()
 @Component({
@@ -15,14 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BatteryStatusPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Batstatus : any;
+  subscription : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private batteryStatus: BatteryStatus) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BatteryStatusPage');
+    console.log('ionViewDidLoad Bat1Page');
   }
-  Bat1(){
-    this.navCtrl.push("Bat1Page");
+  checkBatstatus(){
+    const subscription = this.batteryStatus.onChange().subscribe(status => {
+      console.log(status.level, status.isPlugged);
+      this.Batstatus = status.isPlugged;
+   });
+  }
+  stCheck(){
+    this.subscription.unsubscribe();
   }
   
 

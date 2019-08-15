@@ -4,12 +4,12 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>BatteryStatus</ion-title>
+    <ion-title>Flashlight</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h1>Battery Level </h1>
-  <h2>{{Batstatus}} %</h2>
+    <button ion-button block (click)="Flash()">OpenFlash</button>
+    <button ion-button block (click)="Flashoff()">OffFlash</button>
 
 </ion-content>

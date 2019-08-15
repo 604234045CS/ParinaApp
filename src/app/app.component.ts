@@ -1,3 +1,4 @@
+import { FlashlightPage } from './../pages/flashlight/flashlight';
 import { BatteryStatusPage } from './../pages/battery-status/battery-status';
 import { BarcodeScannerPage } from './../pages/barcode-scanner/barcode-scanner';
 import { Component, ViewChild } from '@angular/core';
@@ -28,7 +29,8 @@ export class MyApp {
       { title: 'List', component: ListPage, icon: 'list-box' },
       { title: 'Login', component: LoginPage, icon: 'add-circle' },
       { title: 'BarcodeScanner', component: BarcodeScannerPage, icon: 'qr-scanner'},
-      {title: 'BatteryStatus', component: BatteryStatusPage, icon: 'battery-dead'}
+      {title: 'BatteryStatus', component: BatteryStatusPage, icon: 'battery-dead'},
+      {title :'Flashlight', component: FlashlightPage, icon: 'flash'}
 
     ];
 
