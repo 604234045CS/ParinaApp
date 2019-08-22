@@ -1,3 +1,4 @@
+import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { FlashlightPage } from './../pages/flashlight/flashlight';
 import { Flashlight } from '@ionic-native/flashlight';
@@ -28,6 +29,7 @@ import { SMS } from '@ionic-native/sms/ngx';
     BarcodeScannerPage,
     BatteryStatusPage,
     FlashlightPage,
+    JsonMenuPage,
     
     
 
@@ -47,6 +49,7 @@ import { SMS } from '@ionic-native/sms/ngx';
     BarcodeScannerPage,
     BatteryStatusPage,
     FlashlightPage,
+    JsonMenuPage,
    
    
   
