@@ -1,3 +1,4 @@
+import { MainMenuPage } from './../pages/main-menu/main-menu';
 import { HttpClientModule } from '@angular/common/http';
 
 import { JsonMenuPage } from './../pages/json-menu/json-menu';
@@ -32,6 +33,7 @@ import { SMS } from '@ionic-native/sms/ngx';
     BatteryStatusPage,
     FlashlightPage,
     JsonMenuPage,
+    MainMenuPage,
     
     
 
@@ -53,6 +55,8 @@ import { SMS } from '@ionic-native/sms/ngx';
     BatteryStatusPage,
     FlashlightPage,
     JsonMenuPage,
+    MainMenuPage,
+    
    
    
   
