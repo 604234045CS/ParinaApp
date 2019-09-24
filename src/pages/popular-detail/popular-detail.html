@@ -1,0 +1,23 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Movie Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt="" width="150" height="150">
+      
+      <button ion-button item-right (click)="wacth(movie.id)">Video Trailer</button>
+      <h2>Release Date</h2>
+      <p>{{movie.release_date}}</p>
+      <h2>Vote Average</h2>
+      <p>{{movie.vote_average}}</p>
+      <h2>Overview</h2>
+      <p>{{movie.overview}}</p>
+
+      
+
+
+</ion-content>

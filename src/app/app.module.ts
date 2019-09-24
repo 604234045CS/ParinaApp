@@ -20,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { SMS } from '@ionic-native/sms/ngx';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 
 
@@ -69,6 +70,7 @@ import { SMS } from '@ionic-native/sms/ngx';
     BarcodeScanner,
     Flashlight,
     BatteryStatus,
+    YoutubeVideoPlayer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
-/**
- * Generated class for the NowPlayingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +9,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'now-playing.html',
 })
 export class NowPlayingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  movieArray =[];
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
+    this.NowData();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NowPlayingPage');
+  }
+ 
+  NowData(){
+    let url =' https://api.themoviedb.org/3/movie/now_playing?api_key=1a9aaaaecc790d8eb38b0862b7dd8563&language=en-US';
+    this.http.get(url).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.movieArray = data.results;
+      } , (error) => {
+        console.log(error);
+      }
+    );
+    
+  
+  }
+  Detail(item){
+    this.navCtrl.push("PopularDetailPage",item);
   }
 
 }
