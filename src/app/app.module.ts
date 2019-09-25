@@ -1,3 +1,6 @@
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { Facebook } from '@ionic-native/facebook';
+
 import { MainMenuPage } from './../pages/main-menu/main-menu';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -71,6 +74,8 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
     Flashlight,
     BatteryStatus,
     YoutubeVideoPlayer,
+    TextToSpeech,
+    Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

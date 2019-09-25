@@ -9,15 +9,21 @@
 
   <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt="" width="150" height="150">
       
-      <button ion-button item-right (click)="wacth(movie.id)">Video Trailer</button>
+      <button ion-button item-right color="light" (click)="wacth(movie.id)">Video Trailer</button>
       <h2>Release Date</h2>
       <p>{{movie.release_date}}</p>
       <h2>Vote Average</h2>
       <p>{{movie.vote_average}}</p>
       <h2>Overview</h2>
       <p>{{movie.overview}}</p>
-
-      
-
+      <button ion-button icon-only  (click)="speak(movie.overview)">
+        <ion-icon name="mic"></ion-icon>
+      </button>
+      <button ion-button icon-only  (click)="notspeak()">
+          <ion-icon name="mic-off"></ion-icon>
+        </button>
+        <button ion-button icon-only  (click)="face()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
 
 </ion-content>

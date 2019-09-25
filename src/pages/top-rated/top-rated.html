@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-searchbar ></ion-searchbar>
+    <ion-searchbar (ionInput)="onSearch($event)" ></ion-searchbar>
     <ion-card *ngFor="let item of movieArray">
       <ion-item (click)="Detail(item)">
           <ion-thumbnail item-left>

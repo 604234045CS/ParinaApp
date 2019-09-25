@@ -1,18 +1,25 @@
 
 <ion-header>
   <ion-navbar>     
-    <ion-title>
-        <ion-icon item-left name="home"></ion-icon>
-      Popular
-      <ion-icon item-right name="arrow-back"></ion-icon>
-    </ion-title>
+      <button ion-button >
+          <ion-icon name="home" item-start></ion-icon>      
+        </button>
+    <ion-title>Popular</ion-title>
+    <button ion-button icon-end (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
   </ion-navbar>
  
 </ion-header>
 
 <ion-content padding>
  
-      <ion-searchbar (search)="onSearch(event)" ></ion-searchbar>
+      <ion-searchbar (ionInput)="onSearch($event)" ></ion-searchbar>
+  
+  
+    <ion-card-content>
+      
+    </ion-card-content>
   
   <ion-card *ngFor="let item of movieArray">
     <ion-item (click)="Detail(item)">

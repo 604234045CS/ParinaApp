@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 
 
@@ -17,7 +19,7 @@ export class WacthMoviePage {
   
   callKey:any=[];
  
-  constructor(public navCtrl: NavController, public navParams: NavParams,public httpCl:HttpClient,private youtube: YoutubeVideoPlayer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public httpCl:HttpClient,private youtube: YoutubeVideoPlayer,public sanitizer: DomSanitizer) {
     
   }
 
@@ -32,9 +34,10 @@ export class WacthMoviePage {
     
   }
 
- 
-open(key){
-  window.open('https://www.youtube.com/watch?v='+key);
+
+openVideo(key:string){
+  let wacht = 'https://www.youtube.com/embed/' + key + '?rel=0&showinfo=0';
+  return this.sanitizer.bypassSecurityTrustResourceUrl(wacht);
 }
 
 
