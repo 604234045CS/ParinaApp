@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
-
+import { HttpClient } from '@angular/common/http';
 @IonicPage()
 @Component({
   selector: 'page-popular-detail',
@@ -10,10 +10,11 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 })
 export class PopularDetailPage {
   movie:any=[];
-  search: string= '';
+  // search: string= '';
   items : string[];
   callMovie:any[];
-  constructor(public navCtrl: NavController, public navParams: NavParams,private tts: TextToSpeech,private fb: Facebook) {
+  titleText : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private tts: TextToSpeech,private fb: Facebook,public http: HttpClient) {
  
   }
 
@@ -28,12 +29,12 @@ export class PopularDetailPage {
     this.navCtrl.push("WacthMoviePage",movieKey);
   }
 
-  searchQuery(event){
-    this.movie();
-    this.items = this.items.filter((item)=>{
+  // searchQuery(event){
+  //   this.movie();
+  //   this.items = this.items.filter((item)=>{
 
-    })
-  }
+  //   })
+  // }
 
   speak(talk : string){
     this.tts.speak(talk)
@@ -41,14 +42,20 @@ export class PopularDetailPage {
     .catch((reason: any) => console.log(reason));
   }
 
-  notspeak(){
+  notspeak(talk : string){
     this.tts.stop()
+    .then(() => console.log('Success'))
+    .catch((reason: any) => console.log(reason));
+
   }
 
-  face(){
+  face(titleText){
+    this.titleText = this.movie['results'];
+    console.log(this.titleText);
     this.fb.login(['public_profile', 'user_friends', 'email'])
   .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
   .catch(e => console.log('Error logging into Facebook', e));
+  
   }
 
 

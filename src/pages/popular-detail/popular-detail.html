@@ -6,8 +6,8 @@
 </ion-header>
 
 <ion-content padding>
-
-  <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt="" width="150" height="150">
+      
+       <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" >
       
       <button ion-button item-right color="light" (click)="wacth(movie.id)">Video Trailer</button>
       <h2>Release Date</h2>
@@ -19,10 +19,10 @@
       <button ion-button icon-only  (click)="speak(movie.overview)">
         <ion-icon name="mic"></ion-icon>
       </button>
-      <button ion-button icon-only  (click)="notspeak()">
+      <button ion-button icon-only  (click)="notspeak(movie.overview)">
           <ion-icon name="mic-off"></ion-icon>
         </button>
-        <button ion-button icon-only  (click)="face()">
+        <button ion-button icon-only  (click)="face(titleText)">
           <ion-icon name="logo-facebook"></ion-icon>
         </button>
 
