@@ -1,5 +1,7 @@
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-import { Facebook } from '@ionic-native/facebook';
+
 
 import { MainMenuPage } from './../pages/main-menu/main-menu';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +26,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { SMS } from '@ionic-native/sms/ngx';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
-
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
     BatteryStatus,
     YoutubeVideoPlayer,
     TextToSpeech,
-    Facebook,
+    SocialSharing,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -19,11 +19,23 @@
       <button ion-button icon-only  (click)="speak(movie.overview)">
         <ion-icon name="mic"></ion-icon>
       </button>
-      <button ion-button icon-only  (click)="notspeak(movie.overview)">
+      <button ion-button color="danger" icon-only  (click)="notspeak(movie.overview)">
           <ion-icon name="mic-off"></ion-icon>
         </button>
-        <button ion-button icon-only  (click)="face(titleText)">
-          <ion-icon name="logo-facebook"></ion-icon>
+
+        <button ion-button icon-only  (click)="instragram()">
+          <ion-icon name="logo-instagram"></ion-icon>
         </button>
 
+
+        <ion-fab right button>
+          <button ion-fab ><ion-icon name="md-share"></ion-icon></button>
+          <ion-fab-list side="left">
+            <button ion-fab (click)="face()"><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab (click)="sms()"><ion-icon name="send"></ion-icon></button>
+            <button ion-fab (click)="email()"><ion-icon name="md-mail"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+
+       
 </ion-content>
