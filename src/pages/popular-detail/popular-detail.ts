@@ -20,7 +20,7 @@ export class PopularDetailPage {
 
   
   constructor(public navCtrl: NavController, public navParams: NavParams,private tts: TextToSpeech,public http: HttpClient,private socialSharing: SocialSharing) {
- 
+    
   }
 
   ionViewDidLoad() {
@@ -28,7 +28,7 @@ export class PopularDetailPage {
    this.movie = this.navParams.data;
    console.log(this.movie );
   }
- t
+ 
  
   wacth(movieKey){
     this.navCtrl.push("WacthMoviePage",movieKey);
@@ -36,15 +36,16 @@ export class PopularDetailPage {
 
  
   speak(talk : string){
-    this.tts.speak(talk);
+    this.tts.speak({
+      text : talk,
+      rate : 0
+    });
   }
 
   notspeak(){
-    this.tts.speak("").then((value)=>{
-      this.playing=false;
-      });
+    this.tts.speak('');
+    this.playing = false;
   }
-
 
   face(){
     let caption = this.movie.overview;
